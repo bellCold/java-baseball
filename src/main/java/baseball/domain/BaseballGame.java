@@ -4,7 +4,7 @@ import baseball.utils.BaseballGameScoreCounter;
 import baseball.utils.BaseballNumberGenerator;
 
 public class BaseballGame {
-    private String computerAnswer;
+    private final String computerAnswer;
 
     public BaseballGame() {
         this.computerAnswer = BaseballNumberGenerator.generateNumber();

@@ -1,11 +1,10 @@
 package baseball.domain;
 
-import baseball.utils.UserInputUtil;
 import baseball.ui.BaseballViewer;
+import baseball.utils.UserInputUtil;
 
 public class BaseballGameApplication {
 
-    private static final String RESTART = "1";
     private final BaseballViewer baseballViewer;
 
     public BaseballGameApplication(BaseballViewer baseballViewer) {
@@ -16,7 +15,7 @@ public class BaseballGameApplication {
         baseballViewer.showStartText();
         do {
             gameProcess(new BaseballGame());
-        } while (UserInputUtil.readRestartAnswer().equals(RESTART));
+        } while (BaseballGameStarter.checkRestart(UserInputUtil.readRestartAnswer()));
     }
 
     private void gameProcess(BaseballGame baseballGame) {
