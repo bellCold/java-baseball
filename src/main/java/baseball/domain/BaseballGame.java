@@ -1,13 +1,14 @@
 package baseball.domain;
 
+import baseball.AppConfig;
 import baseball.utils.BaseballGameScoreCounter;
-import baseball.utils.BaseballNumberGenerator;
 
 public class BaseballGame {
-    private final String computerAnswer;
+
+    private String computerAnswer;
 
     public BaseballGame() {
-        this.computerAnswer = BaseballNumberGenerator.generateNumber();
+        this.computerAnswer = new AppConfig().generator().generateNumber();
     }
 
     public Score compareNumber(String userAnswer) {
